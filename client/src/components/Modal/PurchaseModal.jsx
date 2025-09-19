@@ -72,7 +72,7 @@ const PurchaseModal = ({ closeModal, isOpen, plant, refetch }) => {
       price: totalPrice,
       quantity: plantQuantity,
       address: purchaseInfo.address,
-      status: "pending",
+      status: "Pending",
     };
 
     if (purchaseInfo == "") {

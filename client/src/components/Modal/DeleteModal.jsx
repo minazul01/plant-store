@@ -49,7 +49,7 @@ const DeleteModal = ({ closeModal, isOpen, handleDelete }) => {
                 <hr className='mt-8 ' />
                 <div className='flex mt-2 justify-around'>
                   <button
-                  onClick={handleDelete}
+                  onClick={() => handleDelete()}
                     type='button'
                     className='inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
                   >

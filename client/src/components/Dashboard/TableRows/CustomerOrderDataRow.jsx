@@ -8,7 +8,8 @@ const CustomerOrderDataRow = ({ data, refetch }) => {
   let [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
 
-  const { name, price, image, category, quantity, status, _id, plantId } = data || {};
+  const { name, price, image, category, quantity, status, _id, plantId } =
+    data || {};
 
   // handleDelete the order
   const handleDelete = async () => {
@@ -16,8 +17,11 @@ const CustomerOrderDataRow = ({ data, refetch }) => {
       //  fetch the delete func
       await axiosSecure.delete(`/order-delete/${_id}`);
       toast.success("The order has been cancel !!");
-       // increase quantity by db
-   await axiosSecure.patch(`/plant-quantity/${plantId}`, {quantityUpdate: quantity, status: 'increase'});
+      // increase quantity by db
+      await axiosSecure.patch(`/plant-quantity/${plantId}`, {
+        quantityUpdate: quantity,
+        status: "increase",
+      });
       // refresh data
       refetch();
     } catch (err) {
